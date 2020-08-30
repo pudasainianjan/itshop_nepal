@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Icon on top-->
+    <link rel="shortcut icon" href="#img/logo.png">  
+    <!-- anjanpudasainilovesyou@gmail.com fontaweesome email -->
+    <script src="https://kit.fontawesome.com/7ed1500ea0.js" crossorigin="anonymous"></script>
+    <link href="#https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/styles_minified.css">
+
+    <title>IT shop</title>
+</head>
+<body>
+
+    <!--* navbar -->
+    <div class="navbar">  <!-- Wrappeer for sidebar and navigation -->
+        
+        <!--? instead of using js, i created click event by checkbox giving label to menu icon -->
+        <input type="checkbox" class="checkbox" id="click" hidden>  <!--placed here beecause siblings can be selected with label for with same id-->
+
+        <!--sidebar -->
+        <div class="sidebar">
+            <label for="click">
+                <div class="menu-icon">     <!--? three menu lines-->
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                </div>
+            </label>
+
+            <!-- social media icons -->
+            <ul class="social-icons-list">
+                <li>
+                    <a href="https://www.facebook.com/itshop4243555/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/itshop4243555/" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/itshop4243555/" target="_blank" class="social-link"><i class="fab fa-google-plus-g"></i></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/itshop4243555/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+
+            <!-- small year show paragraph -->
+            <div class="year">
+                <p>2020</p>
+            </div>
+        </div>
+        <!--sidebar end -->
+    
+
+        <!-- navigation -->
+        <nav class="navigation">
+            <!-- navigation has 3 parts -->
+            <div class="navigation-header">
+                <!-- <h1 class="navigation-heading">IT SHOP</h1> -->
+                <div class="navigation-heading"> <!--image logo wrapper-->
+                    <img src="img/logo.png" width="80" class="logo">
+                </div>
+
+                <form class="navigation-search">
+                    <input type="text" class="navigation-search-input" placeholder="search product">
+                    <button class="navigation-search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- list of nav items -->
+            <ul class="navigation-list">
+                <li class="navigation-item">
+                    <a href="#" class="navigation-link">Home</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#about-us" class="navigation-link">About Us</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#products" class="navigation-link">Products</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#events" class="navigation-link">Events</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#customer" class="navigation-link">customer</a>
+                </li>
+                <li class="navigation-item">
+                    <a href="#contact" class="navigation-link">Contact</a>
+                </li>
+            </ul>
+
+            <!-- 3rd par of nav  -->
+            <div class="copyright">
+                <p>&copy; 2020. IT SHOP. All Rights Rserved</p>
+            </div>
+        </nav>
+        <!-- navigation end-->
+    </div>
+    <!--! navbar end -->
+
+
+    <!--* Header -->
+    <header class="header">
+        <!-- conatins 2 parts: brand(logo and heeading) and second(banner with heading,<p> and button) -->
+            <div class="brand">
+                <div> <!--image logo wrapper-->
+                    <img src="img/logo.png" width="80">
+                </div>
+                <!-- <h3 class="shop-heading"></h3> -->
+            </div>
+
+            <div class="banner">
+                <!-- heading,para and button -->
+                <h1 class="banner-heading">Welcome to IT shop</h1>
+                <p class="banner-paragraph">The Place for Today's Technology</p>
+                <button class="banner-button">Inquiry</button>
+            </div>
+    </header>
+    <!--! Header End-->
+
+    <!--*ABOUT US -->
+    <section class="about-us" id="about-us">
+        <!-- 2 parts: content and images -->
+        <div class="about-us-content">
+            <!-- consists of headings,paragraph and button -->
+            <h1 class="about-us-heading">About Us</h1>
+            <div class="underline">
+                <div class="small-underline"></div>
+                <div class="big-underline"></div>
+            </div>
+            <h3 class="sub-heading">IT Shop</h3>
+            <p class="about-us-paragraph">We are located in KTM, Putalisadak...We provide all quality technology accessories in reasonable rates. Our customers are highly satisfied with our service...</p>
+            <button class="about-us-btn">
+                Read More
+                <i class="fas fa-angle-double-right btn-arrow"></i>
+            </button>
+        </div>
+
+        <!-- about us images -->
+        <div class="about-us-images">
+            <img src="img/about-us-img-1.jpg" class="image image-1">
+            <img src="img/about-us-img-2.jpg" class="image image-2">
+            <img src="img/about-us-img-3.jpg" class="image image-3">
+            <img src="img/about-us-img-4.jpg" class="image image-4"> 
+            
+        </div>
+
+    </section>
+    <!--! ABOUT US END -->
+
+    <!--* productS -->
+    <section class="products" id="products">
+        <div class="common-header">
+            <h1 class="common-heading">Products In IT Shop</h1>
+            <div class="underline">
+                <div class="small-underline"></div>
+                <div class="big-underline"></div>
+            </div>
+        </div>
+
+        <div class="products-cards-wrapper">
+
+            <div class="product-card">
+                <img src="img/power_15.jpg" class="product-img">
+                <div class="product-card-content">
+                    <h1 class="product-card-heading">HP Power 15</h1>
+                    <p class="product-card-paragraph">This is gaming laptop with high performing cpu.</p>
+                    <p class="product-price">$999.00</p>
+                    <button class="product-card-btn">
+                        Book Now
+                        <i class="fas fa-angle-double-right btn-arrow"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img/gaming_desktop.jpg" class="product-img">
+                <div class="product-card-content">
+                    <h1 class="product-card-heading">Gaming Desktop</h1>
+                    <p class="product-card-paragraph">Lorem ipsum dolor sit amet.</p>
+                    <p class="product-price">$1999.00</p>
+                    <button class="product-card-btn">
+                        Book Now
+                        <i class="fas fa-angle-double-right btn-arrow"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img/dell_g5.jpg" class="product-img">
+                <div class="product-card-content">
+                    <h1 class="product-card-heading">DELL G5</h1>
+                    <p class="product-card-paragraph">Lorem ipsum dolor sit amet.</p>
+                    <p class="product-price">$2999.00</p>
+                    <button class="product-card-btn">
+                        Book Now
+                        <i class="fas fa-angle-double-right btn-arrow"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img/headset.jpg" class="product-img">
+                <div class="product-card-content">
+                    <h1 class="product-card-heading">Acer Headset</h1>
+                    <p class="product-card-paragraph">Lorem ipsum dolor sit amet.</p>
+                    <p class="product-price">$3999.00</p>
+                    <button class="product-card-btn">
+                        Book Now
+                        <i class="fas fa-angle-double-right btn-arrow"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="products-btn-wrapper">
+            <button class="products-btn">Check All products</button>
+        </div>
+    </section>
+    <!--! productS END -->
+
+    <!--* COSTOMERS  -->
+    <section class="customers" id="customer">
+        <div class="common-header">
+            <h1 class="common-heading">Our Customers</h1>
+            <div class="underline">
+                <div class="small-underline"></div>
+                <div class="big-underline"></div>
+            </div>
+        </div>
+
+        <p class="customers-paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vel hic earum doloremque, quibusdam in aliquam sit natus explicabo...</p>
+        
+        <div class="customers-card-wrapper">
+            <div class="customer-card">
+                <div class="customeer-image-wrapper">
+                    <img src="img/customer-1.jpeg" class="customer-image">
+                </div>
+                <div class="customer-info">
+                    <h3 class="customer-fullname">Ann Marie</h3>
+                    <p class="customer-paragraph-1">happy customer</p>
+                    <p class="customer-paragraph-2">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ex distinctio totam illo ut eveniet quam eos"</p>
+                </div>
+            </div>
+                <!-- ? Second Customeeer card -->
+                <div class="customer-card">
+                    <div class="customeer-image-wrapper">
+                        <img src="img/customer-2.jpeg" class="customer-image">
+                    </div>
+                    <div class="customer-info">
+                        <h3 class="customer-fullname">Arya Smith</h3>
+                        <p class="customer-paragraph-1">happy customer</p>
+                        <p class="customer-paragraph-2">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ex distinctio totam illo ut eveniet quam eos"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    <!--! COSTOMERS END -->
+
+    <!--* FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="main-part">
+            <div class="footer-lists-wrapper">
+                <h3 class="footer-heading">IT shop</h3>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            support@ITshop.com
+                        </a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            KTM, Main Street 123
+                        </a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="tel:014243555" class="footer-list-link">
+                            Tel: +014 243 555  (Click To Call)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-lists-wrapper">
+                <h3 class="footer-heading">Explore</h3>
+                <ul class="footer-list">
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            Home
+                        </a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            products
+                        </a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            Events
+                        </a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            Customers
+                        </a>
+                    </li>
+                    <li class="footer-list-item">
+                        <a href="#" class="footer-list-link">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- conatct -->
+            <div class="contact">
+                <h3 class="footer-heading">Contact</h3>
+                <p>Sign Up for News</p>
+                <form class="footer-form">
+                    <input type="text" class="footer-input" placeholder="Your Email...">
+                    <button class="footer-btn">Sign Up</button>
+                </form>
+            </div>
+
+            <!-- gallery -->
+            <div class="gallery">
+                <h3 class="footer-heading">Gallery</h3>
+                <div class="gallery-images">
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-1.jpg" class="footer-image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-2.jpg" class="footer-image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-3.jpg" class="footer-image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-4.jpg" class="footer-image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-5.jpg" class="footer-image">
+                    </div>
+                    <div class="image-wrapper">
+                        <img src="img/gallery-img-6.jpg" class="footer-image">
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- second part footer below -->
+        <div class="creator-part">
+            <div class="copyright-text">
+                <p>Copyright &copy; 2020. IT shop. All Rights Reserved</p>
+            </div>
+            <div class="text-right">
+                <p>Made with <i class="fas fa-heart"></i>by <span>Anjan</span></p>
+            </div>
+        </div>
+    </footer>
+    <!--! FOOTER END -->
+</body>
+</html>

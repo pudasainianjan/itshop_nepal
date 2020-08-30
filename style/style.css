@@ -1,0 +1,844 @@
+/* common style */
+html{
+    /*making 1rem= 10px, 10px /16px = 0.625 now to % --> 0.625 * 100 = 62.5%*/
+    font-size: 62.5%;        /*default 16px making 1 rem = 62.5% of 16px = 10px*/
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat',sans-serif;
+
+}
+
+/* navbar */
+/* sidebar */
+.sidebar{
+    width: 8rem;        /*8*10px = 80px*/
+    height: 100%;       /*as it takes entire page*/
+    background-color: #eeeeee;
+    position: fixed;    /*sidebar juped out from normal flow of page --- always visible*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}
+
+.menu-icon{
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.line{
+    height: .2rem;
+    width: 2.5rem;
+    background-color: #222;
+    margin-bottom: .6rem;
+}
+
+.line-1, .line-3{
+    width: 1.8rem;
+    transition: all .4s;
+}
+.menu-icon:hover .line{     /*on hover make all line 2.5*/
+    width: 2.5rem;
+}
+
+.social-icons-list{     /*social icons*/
+    list-style: none;
+    padding: 0;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social-link{
+    font-size: 2rem;
+    color: #777;
+    transition: color .3s;
+}
+
+.social-link:hover{
+    color: #deaa86;
+}
+
+.year{  /*year paragraph*/
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #555;
+}
+/* sidebar end*/
+
+
+/* NAVIGATION */
+.navigation{
+    left: -32rem;
+    position: fixed; /*now margin top 1rem by heeading is removed or set heading to margin top 0*/
+    width: 40rem;
+    height: 100%;
+    background: linear-gradient(to top,rgba(34,32,41,1),rgba(34,32,41,.8)), url(../img/nav-bg.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition:left .8s cubic-bezier(1,0,0,1) ;
+    z-index: 2;
+}
+
+.navigation-heading{
+    margin: 1.5rem 0;
+    text-align: center;
+}
+.navigation-search{
+    position: relative;  /*for positioning button*/
+}
+.navigation-search-input{  /*! width of input increases width of wrapper div element also, so as we change in input heading is not ceentered because heading is not immediate child of flex container so we need to center heading inside wrapper now..*/
+    width: 30rem;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, .3);
+    font-family: 'Josefin Sans',sans-serif;
+    font-size: 1.6rem;
+    color: #deaa86;
+    letter-spacing: .1rem;
+    outline: none;      /*deefault border none when focused*/
+    border: .1rem solid #555;
+    border-radius: 10rem;
+    transition: background-color .3s;
+}
+.navigation-search-input:focus{
+    background-color: rgba(0, 0, 0, .1);
+}
+.navigation-search-btn{
+    border: none;
+    background-color: transparent;
+    color: #deaa86;
+    font-size: 1.7rems;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.navigation-search-btn:focus{
+    outline: none;
+}
+.navigation-list{
+    list-style: none;
+    padding: 0;      /*! ul element has default padding so remove them to center perfectly*/
+    height: 28rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;  /*or baseline*/
+}
+.navigation-item{
+    position: relative;
+}
+
+.navigation-link{
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .5s;
+}
+
+.navigation-link::before{
+    content: '';
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa86;
+    position: absolute;
+    top: 1rem;
+    left: -4rem;
+    transition: width .5s cubic-bezier(1,0,0,1);
+}
+
+.navigation-link::after{
+    content: '';
+    width: 0rem;
+    height: .1rem;
+    background-color: #deaa86;
+    position: absolute;
+    top: 1rem;
+    right: -4rem;
+    transition: width .5s cubic-bezier(1,0,0,1);
+}
+
+.navigation-link:hover{
+    color: #deaa86;
+}
+
+.navigation-link:hover::before,
+.navigation-link:hover::after{
+    width: 3rem;
+}
+
+.copyright{
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+/*js alternative, making own click event and showing sidebar*/
+.checkbox:checked ~ .navigation{    /* ~ means all sibling of element in any level*/
+    left: 8rem;
+}
+
+/*making menu burger lines animation when clicked*/
+.checkbox:checked ~ .sidebar .line-1{
+    transform:rotate(-405deg) translate(-3px,5px) scaleX(2.5);
+}
+
+.checkbox:checked ~ .sidebar .line-2{
+    opacity: 0;
+}
+
+.checkbox:checked ~ .sidebar .line-3{
+    transform:rotate(405deg) translate(-10px,-12px) scaleX(2.5);
+}
+
+/* navigation end */
+/*! navbar end */
+
+/* HEADER */
+.header{
+    margin-left: 8rem;  /*because 8 rem is sidebar*/
+    height: 100vh;
+    background: linear-gradient(179deg, rgba(253,253,253,.4) 0%, rgba(2,0,1,.3) 2%, rgba(93,93,93,.2) 100%, rgba(253,253,253,1) 100%),url(../img/header-9.jpg) 10% no-repeat;
+    background-size: cover;
+}
+
+.brand{
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+}
+.brand img{
+    margin-top: 1rem;
+    height: 8rem;
+    width: auto;
+}
+
+.shop-heading{
+    font-family: 'Josefin Sans',sans-serif;
+    font-size: 2.7rem;
+    font-weight: 400;
+    color: #deaa86;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+.banner{
+    color: #ddd;
+    height: 65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(10%);
+}
+
+.banner-heading{
+    font-family: 'Josefin Sans',sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 0;
+    animation: anim 2s;
+}
+
+.banner-paragraph{
+    color: #deaa86;
+    font-size: 3.5rem;
+    font-weight: 300;
+    animation: anim 1.5s .5s backwards;       /*during delay paragraph default state is already visible so we have to use animation-fill backwards so it skips 0% and doesnt change opacity*/
+}
+
+.banner-button{
+    width: 21rem;
+    padding: 1.2rem 2rem;
+    font-size: 2rem;
+    color: #333;
+    letter-spacing: .1rem;
+    border: none;
+    border-radius: 10rem;
+    background: linear-gradient(to right,gold,goldenrod);
+    outline: none;
+}
+
+.banner-button:hover{
+    background: linear-gradient(to left,gold,goldenrod);
+}
+
+.banner-button:active{
+    transform: translateY(.2rem);
+}
+
+@keyframes anim{        /*animation for banner*/
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/*! HEADER END*/
+
+/** ABOUT US  */
+.about-us{
+    margin-left: 8rem;
+    display: flex;
+    background-color: #ddd;
+}
+
+.about-us-content{
+    flex: 0 1 50%; /*grow shring basis*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    box-sizing: border-box;
+}
+
+.about-us-heading{
+    font-family: 'Josefin Sans',sans-serif;
+    font-size: 4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #555;
+    text-align: center;
+}
+
+
+.sub-heading{
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+    color: #b85d1c;
+    text-align: center;
+}
+.about-us-paragraph{
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 300;
+    text-align: center;
+}
+
+.about-us-btn{
+    width: 15rem;
+    padding: .7rem .5rem;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #b85d1c;
+    background-color: transparent;
+    border: .1rem solid #b85d1c;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-arrow{
+    margin-left: .5rem;
+    transition: margin-left .4s;
+}
+
+.about-us-btn:hover .btn-arrow{
+    margin-left: 1.5rem;
+}
+
+.about-us-images{
+    flex: 1 1;
+    position: relative;
+}
+
+.image{
+    width: 32rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 3rem 6rem ,rgba(0, 0, 0, .4);
+    border-radius: .4rem;
+    border: .2rem solid #b85d1c;
+}
+
+.image-1{
+    transform: translate(-20%,-90%);
+}
+
+.image-2{
+        transform: translate(-70%,-70%);
+}
+
+.image-3{
+    transform: translate(-50%,-50%);
+}
+
+.image-4{
+    transform: translate(-30%,-30%);
+}
+
+
+/*! ABOUT US END */
+
+/* * COMMON HEADER */
+
+.common-header{
+    padding: 5rem;
+    text-align: center;
+    color: #b85d1c;
+}
+.common-heading{
+    font-size: 4rem;
+    font-weight: 300;
+    letter-spacing: .2rem;
+}
+
+.small-underline{
+    width: 9rem;
+    height: .1rem;
+    margin: 0 auto 1rem auto;
+    background-color: #b85d1c;
+}
+.big-underline{
+    width: 20rem;
+    height: .1rem;
+    margin: auto;
+    background-color: #b85d1c;
+}
+
+/* ! COMMON HEADER END*/
+
+/** productS */
+.products{
+    margin-left: 8rem;
+}
+
+.products-cards-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card{
+    width: 60rem;
+    margin: 5rem;
+    background-color: #15141b;  
+    box-shadow: 0 2rem 6rem rgba(0, 0, 0, .3);
+}
+.product-img{
+    width: 100%;
+}
+
+.product-card-content{
+    color: #ddd;
+    padding: 2rem;
+}
+
+.product-card-heading{
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.product-card-paragraph{
+    font-size: 1.5rem;
+    color: #777;
+}
+
+.product-price{
+    font-size: 5rem;
+    font-weight: 300;
+    text-align: right;
+    margin: 0;
+    padding: 1rem;
+}
+.product-card-btn{
+    width: 15rem;
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    font-family: 'Montserrat',sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #b85d1c;
+    background-color: transparent;
+    border: .1rem solid #b85d1c;
+    outline: none;
+    cursor: pointer;
+}
+
+.products-btn-wrapper{
+    text-align: center;
+}
+
+.products-btn{
+    width: 20rem;
+    padding: 1.4rem 1rem;
+    margin: 4rem 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: #b85b1c;
+    border: .2rem solid #b85d1c;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 1.5rem 6rem rgba(0, 0, 0, .2) ;
+    transition: all .2s;
+}
+
+.products-btn:hover{
+    color: #ddd;
+    background-color: #b85d1c;
+}
+
+
+/*! productS END */
+
+/** CUSTOMERS */
+.customers{
+    margin-left: 8rem;
+    padding-bottom: 7rem;
+    background-color: #15141b;
+}
+
+.customers-paragraph{
+    font-size: 1.8rem;
+    color: #ddd;
+    width: 50%;
+    margin: 2rem auto 8rem auto;
+    text-align: center;
+}
+
+.customers-card-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+}
+.customer-card{
+    background-color: #eee;
+    width: 60rem;
+    display: flex;
+}
+
+.customeer-image-wrapper{
+    margin: auto 0;
+}
+
+.customer-image{
+    width: 20rem;
+    margin-left: -1.3rem;
+}
+.customer-info{
+    padding: 0 2rem;
+}
+
+.customer-fullname{
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.customer-paragraph-1{
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #b85d1c;
+}
+.customer-paragraph-2{
+    font-size: 1.2rem;
+    font-style: italic;
+}
+/*! CUSTOMERS END*/
+
+
+/** FOOTER */
+.footer{
+    margin-left: 8rem;
+}
+.main-part{
+    display: flex;
+    justify-content: space-between;
+    background-color: #1c1c1c;
+    padding: 4rem;
+}
+
+.footer-heading{
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: goldenrod;
+    margin: 1rem 0 3rem 0;
+}
+.footer-list{
+    list-style: none;
+    padding: 0;
+}
+.footer-list-item{
+    margin-bottom: 2rem;
+}
+.footer-list-link{
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #bbb;
+}
+
+.contact p{
+    font-size: 1.5rem;
+    color: #bbb;
+    margin-bottom: 4rem;
+}
+.footer-form{
+    display: flex;
+}
+.footer-input{
+    width: 25rem;
+    padding: 1rem;
+    font-family: 'Josefin Sans',sans-serif;
+    font-size: 1.8rem;  
+    color: #444;
+    outline: none;
+}
+.footer-btn{
+    padding: 1rem;
+    background-color: #b85d1c;
+    color: #ddd;
+    border: none;
+}
+.gallery{
+    max-width: 45rem;
+}
+.image-wrapper{
+    width: 12rem;
+    margin: .4rem;
+    overflow: hidden;  /*when hover scale increases and width doesnt change*/
+}
+.footer-image{
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;  /*when finish image hover little shake to fix this we used this property*/
+    transition: all .5s ease-in-out;
+}
+.gallery-images{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-image:hover{
+    transform: scale(1.3);
+    opacity: .8;
+}
+
+.creator-part{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 0 4rem;
+}
+.copyright-text{
+    font-size: 1.3rem;
+    color: #aaa;
+}
+.text-right{
+    font-size: 1.4rem;
+    color: #bbb;
+}
+.text-right i{
+    font-size: 2rem;
+    margin: .5rem;
+    color: tomato;
+}
+.text-right span{
+    color: gold;
+}
+/*! FOOTER END */
+
+/** making project responsive */
+@media(max-width: 1400px){      /*when less than 1400 pixels*/
+    .customers-card-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .customer-card:first-child{
+        margin-bottom: 3rem;
+    }
+    .main-part{
+        flex-direction: column;
+    }
+    .footer-list{
+        display: flex;
+    }
+    .footer-list-item{
+        margin-right: 3rem;
+    }
+}
+
+@media(max-width:1200px){
+    .about-us{
+        flex-direction: column;
+        padding-bottom: 20rem;
+    }
+    .about-us-content{
+        margin-bottom: 30rem;
+    }
+}
+
+@media(max-width:900px){
+    .banner{
+        text-align: center;
+    }
+
+    .banner-heading{
+        font-size: 4.7rem;
+    }
+    .banner-paragraph{
+        font-size: 2.6rem;
+    }
+    .banner-button{
+        width: 16rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media(max-width:750px){
+    .customer-card{  
+        width: 80%;
+    }
+    .customer-image{
+        width: 15rem;
+    }
+
+    .footer-list{
+        display: block;
+    }
+
+    .creator-part{
+        flex-direction: column;
+        text-align: center;
+    }
+    .copyright-text{
+        order: 1;
+    }
+}
+
+@media(max-width:600px){
+    .image{
+        width: 50vw;
+        margin-left: -20px;
+        margin-top: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .about-us-content {
+        margin-bottom: 10rem;
+    }
+    .about-us{
+        padding-bottom: 15rem;
+    }
+}
+@media(max-width:500px){
+
+    .navigation{
+        width: 28rem;
+    }
+    .navigation-search-input{
+        width: 80%;
+    }
+    .shop-heading{
+        font-size: 2rem;
+        margin: auto 0;
+    }
+    .banner{
+        height: 100%;
+        margin-top: -10rem;
+    }
+    .banner-heading{
+        font-size: 3rem;
+        
+    }
+    .banner-paragraph{
+        font-size: 2rem;
+    }
+    .image{
+        width: 16rem;
+    }
+    .about-us-heading{
+        font-size: 2.5rem;
+    }
+    .sub-heading{
+        font-size: 2rem;
+    }
+    .about-us-content{
+        padding: 5rem;
+    }
+    .common-heading{
+        font-size: 2rem;
+    }
+    .small-underline{
+        width: 5rem;
+    }
+    .big-underline{
+        width: 12rem;
+    }
+    .product-card-heading{
+        font-size: 1.5rem;
+    }
+    .product-price{
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+    .product-card-btn{
+        width: 12rem;
+        padding: 1rem .5rem;
+        font-size: 1rem;
+    }
+    .customers-paragraph{
+        font-size: 1.4rem;
+        width: 80%;
+        margin: 0 auto 4rem auto;
+    }
+    .main-part{
+        padding: 2rem;
+    }
+    .footer-input{
+        width: 60%;
+    }
+    .gallery .footer-heading{
+        margin-top: 3rem;
+    }
+    .image-wrapper{
+        width: 9rem;
+    }
+
+    .product-card{
+        margin: 3rem;
+    }
+
+    
+
+}
+
+@media(max-width:420px){
+    .customer-card{  
+        width: 80%;
+    }
+
+    .customer-image{
+        width: 10rem;
+    }
+    
+}
+
+@media(max-width:380px){
+    .customer-card{  
+        width: 90%;
+    }
+
+    .customer-image{
+        width: 9rem;
+    }
+}
