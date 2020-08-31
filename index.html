@@ -9,12 +9,14 @@
     <script src="https://kit.fontawesome.com/7ed1500ea0.js" crossorigin="anonymous"></script>
     <link href="#https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./style/styles_minified.css">
-
+    
+    
     <title>IT shop</title>
 </head>
 <body>
-
+    <!-- <a class="btn-floating pulse"><i class="material-icons">menu</i></a> -->
     <!--* navbar -->
     <div class="navbar">  <!-- Wrappeer for sidebar and navigation -->
         
@@ -24,11 +26,14 @@
         <!--sidebar -->
         <div class="sidebar">
             <label for="click">
+                
                 <div class="menu-icon">     <!--? three menu lines-->
                     <div class="line line-1"></div>
                     <div class="line line-2"></div>
                     <div class="line line-3"></div>
+                    <div class="btn-floating btn-small pulse"></div>
                 </div>
+                
             </label>
 
             <!-- social media icons -->
@@ -118,7 +123,10 @@
                 <!-- heading,para and button -->
                 <h1 class="banner-heading">Welcome to IT shop</h1>
                 <p class="banner-paragraph">The Place for Today's Technology</p>
-                <button class="banner-button">Inquiry</button>
+                <button class="banner-button">
+                    
+                    Inquiry</button>
+                    <div class="btn-floating btn-large pulse pulse-inquiry"></div>
             </div>
     </header>
     <!--! Header End-->
@@ -166,7 +174,9 @@
         <div class="products-cards-wrapper">
 
             <div class="product-card">
-                <img src="img/power_15.jpg" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="img/power_15.jpg" class="product-img">
+                </div>
                 <div class="product-card-content">
                     <h1 class="product-card-heading">HP Power 15</h1>
                     <p class="product-card-paragraph">This is gaming laptop with high performing cpu.</p>
@@ -179,7 +189,10 @@
             </div>
 
             <div class="product-card">
-                <img src="img/gaming_desktop.jpg" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="img/gaming_desktop.jpg" class="product-img">
+                </div>
+                
                 <div class="product-card-content">
                     <h1 class="product-card-heading">Gaming Desktop</h1>
                     <p class="product-card-paragraph">Lorem ipsum dolor sit amet.</p>
@@ -192,7 +205,10 @@
             </div>
 
             <div class="product-card">
-                <img src="img/dell_g5.jpg" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="img/dell_g5.jpg" class="product-img">
+                </div>
+                
                 <div class="product-card-content">
                     <h1 class="product-card-heading">DELL G5</h1>
                     <p class="product-card-paragraph">Lorem ipsum dolor sit amet.</p>
@@ -205,7 +221,10 @@
             </div>
 
             <div class="product-card">
-                <img src="img/headset.jpg" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="img/headset.jpg" class="product-img">
+                </div>
+                
                 <div class="product-card-content">
                     <h1 class="product-card-heading">Acer Headset</h1>
                     <p class="product-card-paragraph">Lorem ipsum dolor sit amet.</p>
@@ -372,4 +391,5 @@
     </footer>
     <!--! FOOTER END -->
 </body>
+
 </html>
